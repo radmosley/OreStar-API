@@ -6,6 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from django.core.management.base import BaseCommand
+from dates import start_date, end_date
 import csv
 import time
 
@@ -54,7 +55,7 @@ class Command(BaseCommand):
 
                 #Clear form input by default and input start and end dates
         start.clear()
-        start.send_keys(input('Enter your start date: '))
+        start.send_keys()
         end.clear()
         end.send_keys(input('Enter your end date: '))
 

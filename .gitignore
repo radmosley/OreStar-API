@@ -1,7 +1,10 @@
 # Byte-compiled / optimized / DLL files
-__pycache__/
+*__pycache__/
+elections_api/__pychache__/
 *.py[cod]
 *$py.class
+*/migrations/
+files/
 
 # C extensions
 *.so

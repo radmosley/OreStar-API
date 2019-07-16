@@ -102,5 +102,32 @@ end_date = [
     '12/31/2013',
     ]
 
-for x in start_date:
+for x in len(start_date)-1:
+    #Grab form and button elements
+    start = driver.find_element_by_id('cneSearchTranStartDate')
+    end = driver.find_element_by_id('cneSearchTranEndDate')
+    search_button = driver.find_element_by_name('search')
+
+    #Clear form input by default and input start and end dates
+    start.clear()
+    start.send_keys(start_date[x])
+    end.clear()
+    end.send_keys(end_date[x])
+        
+    #click search button
+    search_button.click()
+    print('searching dates')
     print(start_date + ' ' + end_date)
+    
+    # try:
+    #     wait = WebDriverWait(driver, 10)
+    #     # download = wait.until(EC.visibility_of_element_located((By.PARTIAL_LINK_TEXT, "Excel Format"))).send_keys(Keys.COMMAND + 't') 
+    #     download = driver.find_element_by_partial_link_text('Excel Format')
+    #     #Download the excel file
+    #     download.click()
+    #     time.sleep(30)
+    #     driver.quit()
+    #     print("downloading file")
+
+    # except TimeoutException:
+    #     print("Loading took too much time!")
